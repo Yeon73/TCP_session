@@ -14,10 +14,11 @@ public class CommunityService {
 
 
     public Community getCommunityInfo(Long id) {
-        return communityRepository.findById(id).orElseThrow(() -> new RuntimeException());
+        return communityRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
     public Long saveInfo(Community community) {
+
         return communityRepository.save(community).getId();
     }
 }

@@ -12,6 +12,7 @@ public class Community {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "community_id")
     private Long id;
+
     private String title;
     private String content;
 }

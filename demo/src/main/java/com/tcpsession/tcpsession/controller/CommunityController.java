@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping(value = "/v1/community")
 public class CommunityController {
+
     private final CommunityService communityService;
 
     @GetMapping(value = "/{id}/getinfo")
-
     public ResponseEntity<Community> getInfo(
         @PathVariable Long id) {
-        Community community = communityService.getCommunityInfo(id);
+        Community result = communityService.getCommunityInfo(id);
         return ResponseEntity.ok(result);
     }
 
-    @PostMapping(value = "/saveinfo")
-    public ResponseEntity<Long> saveInfo(@RequestBody CommunityDTO communityDTO) {
-        return ResponseEntity.ok(communityService.saveInfo(communityDTO));
+    @PostMapping(value = "/save")
+    public ResponseEntity<Long> saveInfo(@RequestBody Community community) {
+        return ResponseEntity.ok(communityService.saveInfo(community));
     }
 }
