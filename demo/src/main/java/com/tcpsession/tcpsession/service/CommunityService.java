@@ -18,7 +18,6 @@ public class CommunityService {
     }
 
     public Long saveInfo(Community community) {
-
         return communityRepository.save(community).getId();
     }
 }
